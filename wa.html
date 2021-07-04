@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="he" dir="rtl">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>WA.me</title>
     <meta name="description" content="WA.me Generator">
@@ -18,7 +18,7 @@
 
             if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
                 // true for mobile device
-                window.open('https://web.whatsapp.com/send?phone=972'+number+'&text');
+                window.open('https://wa.me/972'+number+'&text');
             }else{
                 // false for not mobile device
                 window.open('https://web.whatsapp.com/send?phone=972'+number+'&text&app_absent=0');
