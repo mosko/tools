@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <title>WA.me</title>
+    <meta name="description" content="WA.me Generator">
+    <meta name="author" content="Dor Moshkovitz">
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        function wame() {
+            var number = document.getElementById('tel').value;
+
+            const regex = /[^0-9]/g;
+            number = number.replace(regex, '');
+            window.open('https://web.whatsapp.com/send?phone=972'+number+'&text&app_absent=0');
+        }
+    </script>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+
+        body {
+            font-family: 'Heebo', sans-serif;
+            font-size: 25px;
+            overflow: hidden;
+        }
+        #main {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+        }
+        #tel {
+            border: 0;
+            border-bottom: 1px solid lightgrey;
+            font-size: 125%;
+            text-align: center;
+            padding: 10px;
+        }
+        #cc {
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            display: block;
+            width: 100%;
+            font-size: 75%;
+        }
+        #do {
+            padding: 20px 40px;
+            margin-top: 20px;
+            font-size: 125%;
+            background: #8c001e;
+            color: white;
+            border: 0;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        a {
+            color: grey!important;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <input id="tel" type="tel" placeholder="הכנס מספר טלפון כאן">
+    <br>
+    <button id="do" onclick="wame()">פתח צ'אט וואטסאפ</button>
+</div>
+<div id="cc">
+    <small><a href="https://www.petel-studio.co.il" target="_blank">סטודיו פטל בניית אתרים</a></small>
+</div>
+</body>
+</html>
