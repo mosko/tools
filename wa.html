@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="he" dir="rtl">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>WA.me</title>
     <meta name="description" content="WA.me Generator">
     <meta name="author" content="Dor Moshkovitz">
-    <link rel="stylesheet" href="css/styles.css?v=1.0">
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -15,7 +15,15 @@
 
             const regex = /[^0-9]/g;
             number = number.replace(regex, '');
-            window.open('https://web.whatsapp.com/send?phone=972'+number+'&text&app_absent=0');
+
+            if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+                // true for mobile device
+                window.open('https://web.whatsapp.com/send?phone=972'+number+'&text');
+            }else{
+                // false for not mobile device
+                window.open('https://web.whatsapp.com/send?phone=972'+number+'&text&app_absent=0');
+            }
+
         }
     </script>
     <style type="text/css">
